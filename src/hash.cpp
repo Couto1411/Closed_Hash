@@ -29,6 +29,8 @@ void InsereHash(List<Hash> *hash, List<int> *vetor){
         aux=hash->cabeca;
         while (aux->prox->dado.key!=key)
             aux=aux->prox;
+        if (aux->prox->dado.list.cabeca->prox!=nullptr)
+            hash->collisions+=1;
         InsereLista(&aux->prox->dado.list,numeros->prox->dado);
         numeros=numeros->prox;
     }
@@ -47,12 +49,12 @@ void buscaHash(List<Hash> *hash, int numero){
         numeros=numeros->prox;
     if (numeros->prox!=nullptr&&numeros->prox->dado==numero)
     {
-        printf("O numero existe na lista, na lista de chave %d: \n",key);
+        printf("O numero existe na hash, na lista de chave %d: \n",key);
         PrintLista(&aux->prox->dado.list);
         printf("\n");
     }
     else
-        printf("O numero nao existe na lista.\n");
+        printf("O numero nao existe na hash.\n");
     
 }
 
@@ -71,6 +73,8 @@ void removeHash(List<Hash> *hash, int numero){
         temp=numeros->prox;
         numeros->prox=numeros->prox->prox;
         free(temp);
+        if (numeros!=aux->prox->dado.list.cabeca)
+            hash->collisions--;        
     }
     else
         printf("O numero nao existe na lista.\n");
@@ -80,11 +84,15 @@ void printLista(List<Hash> *hash){
     Block<Hash> *aux;
     aux=hash->cabeca;
     while (aux->prox!=nullptr){
-        printf("%d: ",aux->prox->dado.key);
-        PrintLista(&aux->prox->dado.list);
-        printf("\n");
+        if (aux->prox->dado.list.cabeca->prox!=nullptr)
+        {
+            printf("%d: ",aux->prox->dado.key);
+            PrintLista(&aux->prox->dado.list);
+            printf("\n");
+        }
         aux=aux->prox;
     }
+    printf("Houveram %d colisoes.\n",hash->collisions);
 }
 
 int HashKey(List<Hash> *hash,int numero){

@@ -15,7 +15,7 @@ int main(){
 	buscaHash(&Hash,1377);
 	buscaHash(&Hash,1378);
 	removeHash(&Hash, 4557);
-	removeHash(&Hash, 4558);
+	removeHash(&Hash, 4700);
 	printLista(&Hash);
 	return 0;
 }
