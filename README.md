@@ -39,6 +39,10 @@ Execução:
 	<img src="imgs/exec.jpg"/> 
 </p>       
 
+# Conclusão
+
+Ao compararmos a estrutura a uma semelhante porém aberta dupla, notamos que existem menos colisões na hora de inserção pois para inserirmos na fechada basta apenas colocar no final da lista, tendo assim um custo 1, porém na busca devemos percorrer a lista de inteiros de cada chave por completo para acharmos um valor específico. Ou seja, perde-se na busca porém ganha-se na inserção.
+
 # Compilação e Execução
 
 O programa possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
