@@ -1,4 +1,4 @@
-# Double_Hash
+# Closed_Hash
 O objetivo do problema é implementar uma Hash fechada que contenha as funções de insert, search e remove, assim como contando as colisões que ocorrerem.       
 # Estrutura
 A Hash é idealizada da seguinte maneira, existe uma lista dinâmica (de maneira similar a [dynamic_list](https://github.com/mpiress/dynamic_list)) que possui o próximo primo do tamanho do vetor inserido como tamanho próprio, e em cada posição da lista possuímos uma chave e uma lista de valores que correspondem a essa chave (type Hash).
@@ -16,7 +16,7 @@ A partir de uma lista de Hash's vazia e de uma lista de inteiros preenchida, ess
 Após iniciar a hash o método percorre a lista de inteiros passada calculando uma chave (*numero%hash->qtd*) para o valor atual e inserindo na lista de inteiros da posição da Hash que contém a mesma chave, caso já exista um valor nesta, há uma colisão, portanto adiciona-se 1 ao atributo *hahs->collisions* para que seja possível exibir a quantidade de colisões que houveram.
 
 4) printLista(List<Hash> *hash):       
-Percorre a Hash recebida printando os objetos(chave e lista de inteiros) aonde existe ao menos um item na lista de inteiros.
+Percorre a Hash recebida printando os objetos(chave e lista de inteiros) aonde existe ao menos um item na lista de inteiros, e no final printar o número de colisões ocorridas.
 
 5) buscaHash(List<Hash> *hash, int numero):       
 Calcula uma chave (*numero%hash->qtd*) para o valor recebido e percorre a Hash recebida verificando se a chave do objeto atual é igual à chave calculada, caso seja, verifica se o número existe na lista de inteiros do objeto, caso exista, printa a chave e a lista de inteiros do objeto onde o número se encontra. Caso não encontre o número recebido, mostra ao usuário que ele não existe. 
