@@ -12,7 +12,7 @@ Este método é responsável por inicializar qualquer tipo de Lista passada para
 Este método é responsável por inserir qualquer tipo de dado passado para ele numa lista também passada para o método (mais detalhes: [dynamic_list](https://github.com/mpiress/dynamic_list)).
 
 3) InsereHash(List<Hash> *hash, List<int> *vetor):     
-A partir de uma lista de Hash's vazia e de uma lista de inteiros preenchida, esse método inicializa a lista de Hash's setando o atributo de tamanho dela como o proximo primo do dobro do tamanho da lista de inteiros (*hash->qtd=proxPrimo((2*vetor->qtd))*), depois insere um objeto tipo Hash contendo uma cahve sequencial (1,2,3,...) e uma lista de inteiros vazia, faz-se isto para todo o tamanho da Hash.      
+A partir de uma lista de Hash's vazia e de uma lista de inteiros preenchida, esse método inicializa a lista de Hash's setando o atributo de tamanho dela como o proximo primo do dobro do tamanho da lista de inteiros (*hash->qtd=proxPrimo((2\*vetor->qtd))*), depois insere um objeto tipo Hash contendo uma cahve sequencial (1,2,3,...) e uma lista de inteiros vazia, faz-se isto para todo o tamanho da Hash.      
 Após iniciar a hash o método percorre a lista de inteiros passada calculando uma chave (*numero%hash->qtd*) para o valor atual e inserindo na lista de inteiros da posição da Hash que contém a mesma chave, caso já exista um valor nesta, há uma colisão, portanto adiciona-se 1 ao atributo *hahs->collisions* para que seja possível exibir a quantidade de colisões que houveram.
 
 4) printLista(List<Hash> *hash):       
